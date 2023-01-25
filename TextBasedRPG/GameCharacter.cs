@@ -9,12 +9,13 @@ namespace TextBasedRPG
     internal class GameCharacter
     {
         public int health;
-        public int name;
+        public string name;
 
 
-        public GameCharacter()
+        public GameCharacter(int health, string name)
         {
-
+            this.health = health;
+            this.name = name;
         }
 
     }
