@@ -44,7 +44,7 @@ namespace TextBasedRPG
             {
                 y++;
             }
-            if (input.KeyChar == 'a')
+            if (input.KeyChar == 'a')  
             {
                 x--;
             }
@@ -52,7 +52,23 @@ namespace TextBasedRPG
             {
                 x++;
             }
-            
+            if (input.Key == ConsoleKey.UpArrow)
+            {
+                y--;
+            }
+            if (input.Key == ConsoleKey.DownArrow)
+            {
+                y++;
+            }
+            if (input.Key == ConsoleKey.LeftArrow)
+            {
+                x--;
+            }
+            if (input.Key == ConsoleKey.RightArrow)
+            {
+                x++;
+            }
+
             //probably will remove later
             if (x < 0) x = 0;
            if (y < 0) y = 0;

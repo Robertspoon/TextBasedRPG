@@ -17,7 +17,7 @@ namespace TextBasedRPG
 
             GameCharacter gameCharacter = new GameCharacter(1000000,"GameCharacter");
             Player player = new Player("Jerald",100,100,3,0,1);
-            Enemy enemy = new Enemy("Rat", 50);
+            Enemy enemy = new Enemy("Rat", 50,25);
 
 
             while(true)
