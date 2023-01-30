@@ -20,6 +20,7 @@ namespace TextBasedRPG
         public void DrawEnemy()
         {
             Console.SetCursorPosition(x, y);
+            Console.ForegroundColor = ConsoleColor.DarkRed;
             Console.WriteLine("R");
         }
     }

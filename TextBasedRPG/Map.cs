@@ -59,11 +59,42 @@ namespace TextBasedRPG
                 
                 for (int y = 0; y< map.GetLength(1); y++)
                 {
-                   Console.Write(map[x, y]);
+                    TileColour(y, x);
+                    Console.Write(map[x, y]);
                 }
                 Console.WriteLine();
             }
             
+        }
+        static void TileColour(int x, int y)
+        {
+            switch (map[y, x])
+            {
+
+                case '`':
+                    Console.BackgroundColor = ConsoleColor.Green;
+                    break;
+
+                case '^':
+                    Console.BackgroundColor = ConsoleColor.DarkGray;
+                    break;
+
+                case '~':
+                    Console.BackgroundColor = ConsoleColor.Blue;
+                    break;
+
+                case '*':
+                    Console.BackgroundColor = ConsoleColor.DarkGreen;
+                    break;
+
+                case 'Ó':
+                    Console.BackgroundColor = ConsoleColor.DarkRed;
+                    break;
+
+                case '-':
+                    Console.BackgroundColor = ConsoleColor.White;
+                    break;
+            }
         }
 
     }

@@ -80,6 +80,7 @@ namespace TextBasedRPG
         {
            //Console.Clear(); //Remove once map is drawn
             Console.SetCursorPosition(x, y);
+            Console.ForegroundColor = ConsoleColor.DarkMagenta;
             Console.WriteLine("#");
         }
         
