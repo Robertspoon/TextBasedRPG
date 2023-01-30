@@ -11,20 +11,23 @@ namespace TextBasedRPG
         
         static void Main(string[] args)
         {
-            Console.WriteLine("Text based RPG");
+            //Console.WriteLine("Text based RPG");
+           // Console.WriteLine();
+           // Console.WriteLine("Press any key to start.....");
 
             Console.CursorVisible = false;
 
-            GameCharacter gameCharacter = new GameCharacter(1000000,"GameCharacter");
-            Player player = new Player("Jerald",100,100,3,0,1);
-            Enemy enemy = new Enemy("Rat", 50,25);
+            GameCharacter gameCharacter = new GameCharacter(1000000,"GameManager");
+            Player player = new Player("Jerald",100);
+            Enemy enemy = new Enemy("Rat",25);
+            Map map = new Map();
 
-
+            map.DrawMap();
             while(true)
             {
-                player.Update();
-                player.Draw();
-                enemy.DrawEnemy();
+               player.Draw();
+               enemy.DrawEnemy();
+               player.Update();  
             }
 
             Console.ReadKey(true);

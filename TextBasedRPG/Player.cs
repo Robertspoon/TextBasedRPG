@@ -10,22 +10,22 @@ namespace TextBasedRPG
     {
         //fields
         private int x = 10;
-        private int y = 10;
+        private int y = 15;
 
-        public int shields;
-        public int lives;
-        public int exp;
-        public int level;
+        //public int shields;
+       // public int lives;
+        //public int exp;
+       // public int level;
 
 
         //methods
 
-        public Player(string name, int health, int shields, int lives, int exp, int level) : base(health, name)
+        public Player(string name, int health) : base(health, name)
         {
-            this.shields = shields;
-            this.lives = lives;
-            this.exp = exp;
-            this.level = level;
+            //this.shields = shields;
+           // this.lives = lives;
+           // this.exp = exp;
+           // this.level = level;
         }
 
       
@@ -78,7 +78,7 @@ namespace TextBasedRPG
 
         public void Draw()
         {
-            Console.Clear(); //Remove once map is drawn
+           //Console.Clear(); //Remove once map is drawn
             Console.SetCursorPosition(x, y);
             Console.WriteLine("#");
         }
