@@ -11,7 +11,8 @@ namespace TextBasedRPG
         //fields
         private int x = 25;
         private int y = 10;
-        private char avatar = 'P';
+       
+
 
         //public int shields;
        // public int lives;
@@ -21,7 +22,7 @@ namespace TextBasedRPG
 
         //methods
 
-        public Player(string name, int health) : base(health, name)
+        public Player(string name, int health, Map map, char avatar) : base(health, name, map, avatar)
         {
             //this.shields = shields;
            // this.lives = lives;
@@ -37,38 +38,24 @@ namespace TextBasedRPG
            ConsoleKeyInfo input;
            input = Console.ReadKey(true);
            
-            if (input.KeyChar == 'w')
+            map.DrawTile(x, y);
+            if ((input.KeyChar == 'w' || input.Key == ConsoleKey.UpArrow) && map.CheckWall(x, y-1) == false)
             {
                 y--;
             }
-            if (input.KeyChar == 's')
+            if ((input.KeyChar == 's' || input.Key == ConsoleKey.DownArrow) && map.CheckWall(x, y+1) == false)
             {
                 y++;
             }
-            if (input.KeyChar == 'a')  
+            if ((input.KeyChar == 'a' || input.Key == ConsoleKey.LeftArrow) && map.CheckWall(x-1, y) == false)
             {
                 x--;
             }
-            if (input.KeyChar == 'd')
-            {
+            if ((input.KeyChar == 'd' || input.Key == ConsoleKey.RightArrow) && map.CheckWall(x+1, y) == false)
+            {      
                 x++;
             }
-            if (input.Key == ConsoleKey.UpArrow)
-            {
-                y--;
-            }
-            if (input.Key == ConsoleKey.DownArrow)
-            {
-                y++;
-            }
-            if (input.Key == ConsoleKey.LeftArrow)
-            {
-                x--;
-            }
-            if (input.Key == ConsoleKey.RightArrow)
-            {
-                x++;
-            }
+            
 
             //probably will remove later
             if (x < 0) x = 0;
@@ -80,6 +67,7 @@ namespace TextBasedRPG
         public void Draw()
         {
             //Console.Clear(); //Remove once map is drawn
+            map.TileColour(x, y);
             Console.SetCursorPosition(x, y);
             Console.ForegroundColor = ConsoleColor.DarkMagenta;
             Console.WriteLine(avatar);

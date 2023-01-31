@@ -6,38 +6,25 @@ using System.Threading.Tasks;
 
 namespace TextBasedRPG
 {
-    internal class GameCharacter : Map
+    internal class GameCharacter 
     {
         public int health;
         public string name;
         public Map map;
+        public char avatar;
 
 
-        public GameCharacter(int health, string name)
+        public GameCharacter(int health, string name, Map map, char avatar)
         {
             this.health = health;
             this.name = name;
             this.map = map;
+            this.avatar = avatar;
         }
 
-        public void MoveUp()
-        {
+        
 
-        }
 
-        public void MoveDown()
-        {
-
-        }
-        public void MoveLeft()
-        {
-
-        }
-
-        public void MoveRight()
-        {
-
-        }
         public void TakeDamage(int hp)
         {
             health -= hp;

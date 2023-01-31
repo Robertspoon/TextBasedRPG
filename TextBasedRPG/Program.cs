@@ -17,10 +17,10 @@ namespace TextBasedRPG
 
             Console.CursorVisible = false;
 
-            GameCharacter gameCharacter = new GameCharacter(1000000,"GameManager");
-            Player player = new Player("Jerald",100);
-            Enemy enemy = new Enemy("Rat",25);
+            //GameCharacter gameCharacter = new GameCharacter();
             Map map = new Map();
+            Player player = new Player("Jerald",100,map,'P');
+            Enemy enemy = new Enemy("Rat",25,map,'E');
 
             map.DrawMap();
             while(true)

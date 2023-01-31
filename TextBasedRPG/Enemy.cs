@@ -11,15 +11,16 @@ namespace TextBasedRPG
 
         private int x = 40;
         private int y = 11;
-        private char avatar = 'E';
+       
 
-        public Enemy(string name, int health) : base(health, name)
+        public Enemy(string name, int health, Map map, char avatar) : base(health, name, map, avatar)
         {
             
         }
 
         public void Draw()
         {
+            map.TileColour(x, y);
             Console.SetCursorPosition(x, y);
             Console.ForegroundColor = ConsoleColor.DarkRed;
             Console.WriteLine(avatar);
@@ -27,7 +28,12 @@ namespace TextBasedRPG
 
         public void Update()
         {
-            x++;
+            map.DrawTile(x, y);
+            if (map.CheckWall(x+1, y) == false)
+            {
+               x++;
+            }
+            
             
         }
     }
