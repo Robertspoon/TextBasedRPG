@@ -11,7 +11,7 @@ namespace TextBasedRPG
         //fields
         private int x = 25;
         private int y = 10;
-        private char sprite = 'P';
+        private char avatar = 'P';
 
         //public int shields;
        // public int lives;
@@ -82,7 +82,7 @@ namespace TextBasedRPG
             //Console.Clear(); //Remove once map is drawn
             Console.SetCursorPosition(x, y);
             Console.ForegroundColor = ConsoleColor.DarkMagenta;
-            Console.WriteLine(sprite);
+            Console.WriteLine(avatar);
         }
         
 

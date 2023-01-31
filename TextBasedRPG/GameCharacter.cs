@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TextBasedRPG
 {
-    internal class GameCharacter
+    internal class GameCharacter : Map
     {
         public int health;
         public string name;
@@ -17,7 +17,7 @@ namespace TextBasedRPG
         {
             this.health = health;
             this.name = name;
-           // this.map = map;
+            this.map = map;
         }
 
         public void MoveUp()
@@ -37,6 +37,11 @@ namespace TextBasedRPG
         public void MoveRight()
         {
 
+        }
+        public void TakeDamage(int hp)
+        {
+            health -= hp;
+            if (health < 0) health = 0;
         }
 
     }

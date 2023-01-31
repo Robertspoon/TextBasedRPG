@@ -27,7 +27,8 @@ namespace TextBasedRPG
             {
                player.Draw();
                enemy.Draw();
-               player.Update();  
+               player.Update();
+               enemy.Update();
             }
 
             Console.ReadKey(true);
