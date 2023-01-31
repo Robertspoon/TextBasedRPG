@@ -26,7 +26,7 @@ namespace TextBasedRPG
             while(true)
             {
                player.Draw();
-               enemy.DrawEnemy();
+               enemy.Draw();
                player.Update();  
             }
 

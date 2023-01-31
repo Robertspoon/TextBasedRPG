@@ -11,17 +11,23 @@ namespace TextBasedRPG
 
         private int x = 40;
         private int y = 11;
+        private char sprite = 'E';
 
         public Enemy(string name, int health) : base(health, name)
         {
             
         }
 
-        public void DrawEnemy()
+        public void Draw()
         {
             Console.SetCursorPosition(x, y);
             Console.ForegroundColor = ConsoleColor.DarkRed;
-            Console.WriteLine("R");
+            Console.WriteLine(sprite);
+        }
+
+        public void Update()
+        {
+
         }
     }
 }

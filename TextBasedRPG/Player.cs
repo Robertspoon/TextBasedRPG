@@ -9,8 +9,9 @@ namespace TextBasedRPG
     internal class Player : GameCharacter
     {
         //fields
-        private int x = 10;
-        private int y = 15;
+        private int x = 25;
+        private int y = 10;
+        private char sprite = 'P';
 
         //public int shields;
        // public int lives;
@@ -81,7 +82,7 @@ namespace TextBasedRPG
             //Console.Clear(); //Remove once map is drawn
             Console.SetCursorPosition(x, y);
             Console.ForegroundColor = ConsoleColor.DarkMagenta;
-            Console.WriteLine("#");
+            Console.WriteLine(sprite);
         }
         
 
