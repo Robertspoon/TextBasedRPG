@@ -143,7 +143,6 @@ namespace TextBasedRPG
                     case '^':
                     case '~':
                     case '*':
-                    
                         return true;
                     case '`':
                     default:
