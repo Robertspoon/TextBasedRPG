@@ -10,12 +10,14 @@ namespace TextBasedRPG
     {
         public int health;
         public string name;
+        public Map map;
 
 
         public GameCharacter(int health, string name)
         {
             this.health = health;
             this.name = name;
+           // this.map = map;
         }
 
         public void MoveUp()

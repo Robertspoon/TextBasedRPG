@@ -126,9 +126,25 @@ namespace TextBasedRPG
                     break;
             }
         }
-        public void CheckWall()
+        public bool CheckWall(int x, int y)
         {
-            
+            try
+            {
+                switch (map[y, x])
+                {
+                    case '^':
+                    case '~':
+                    case '*':
+                        return true;
+                    case '`':
+                    default:
+                        return false;
+                }
+            }
+            catch (Exception)
+            {
+                return true;
+            }
         }
 
 
