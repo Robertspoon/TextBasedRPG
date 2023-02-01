@@ -11,27 +11,13 @@ namespace TextBasedRPG
         //fields
         private int x = 25;
         private int y = 10;
-       
-
-
-        //public int shields;
-       // public int lives;
-        //public int exp;
-       // public int level;
-
-
+  
         //methods
 
         public Player(string name, int health, Map map, char avatar) : base(health, name, map, avatar)
         {
-            //this.shields = shields;
-           // this.lives = lives;
-           // this.exp = exp;
-           // this.level = level;
+            
         }
-
-      
-
        public void Update()
        {
            //gets player input
@@ -55,26 +41,15 @@ namespace TextBasedRPG
             {      
                 x++;
             }
-            
-
-            //probably will remove later
-            if (x < 0) x = 0;
-           if (y < 0) y = 0;
-           // if (x >= Console.WindowWidth) x = Console.WindowWidth - 1;
-           // if (x >= Console.WindowHeight -1) x = Console.WindowHeight - 2;
-        }
+       }
 
         public void Draw()
         {
-            //Console.Clear(); //Remove once map is drawn
+            //Draws player to map
             map.TileColour(x, y);
             Console.SetCursorPosition(x, y);
             Console.ForegroundColor = ConsoleColor.DarkMagenta;
             Console.WriteLine(avatar);
         }
-        
-
-       
-
     }
 }

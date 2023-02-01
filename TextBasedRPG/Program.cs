@@ -11,6 +11,7 @@ namespace TextBasedRPG
         
         static void Main(string[] args)
         {
+            //Pseudo starting screen
             Console.WriteLine("Text based RPG");
             Console.WriteLine();
             Console.WriteLine("Press any key to start.....");
@@ -22,17 +23,17 @@ namespace TextBasedRPG
             
             Map map = new Map();
             Player player = new Player("Jerald",100,map,'P');
-            Enemy enemy = new Enemy("Rat",25,map,'E');
+            Enemy enemy = new Enemy("Rat",25,map,'R');
 
             map.DrawMap();
+            //Main Game Loop
             while(true)
             {
                player.Draw();
                enemy.Draw();
                player.Update();
-               //enemy.Update();
+               enemy.Update();
             }
-
             Console.ReadKey(true);
         }
     }
