@@ -12,7 +12,11 @@ namespace TextBasedRPG
         static void Main(string[] args)
         {
             //Pseudo starting screen
-            Console.WriteLine("Text based RPG");
+            Console.WriteLine("Robert Atkinson's Text Based RPG");
+            Console.WriteLine();
+            Console.WriteLine("First Playable");
+            Console.WriteLine();
+            Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine("Press any key to start.....");
             Console.ReadKey(true);
@@ -22,8 +26,8 @@ namespace TextBasedRPG
 
             
             Map map = new Map();
-            Player player = new Player("Jerald",100,map,'P');
-            Enemy enemy = new Enemy("Rat",25,map,'R');
+            Player player = new Player("Jerald",10,map,'P');
+            Enemy enemy = new Enemy("Rat",5,map,'R');
 
             map.DrawMap();
             //Main Game Loop

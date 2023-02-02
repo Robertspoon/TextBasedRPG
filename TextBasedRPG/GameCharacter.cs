@@ -28,6 +28,13 @@ namespace TextBasedRPG
             health -= hp;
             if (health < 0) health = 0;
         }
-
+        /*public bool CheckIfDead()
+        {
+            if (health == 0) return false;
+        }*/
+       public void CheckForTarget(int x, int y)
+       {
+           
+       }
     }
 }
