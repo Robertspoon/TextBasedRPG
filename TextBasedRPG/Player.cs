@@ -9,18 +9,19 @@ namespace TextBasedRPG
     internal class Player : GameCharacter
     {
         //fields
-        private int x = 25;
-        private int y = 10;
+        public int x = 25;
+        public int y = 10;
+        public EnemyManager eManager;
   
         //methods
 
-        public Player(string name, int health, Map map, char avatar) : base(health, name, map, avatar)
+        public Player(string name, int health, Map map, char avatar,EnemyManager eManager) : base(health, name, map, avatar)
         {
-            
+            this.eManager = eManager;
         }
        public void Update()
        {
-            base.CheckForTarget(x, y);
+            OnDeath();
             Move();
        }
 
@@ -37,23 +38,41 @@ namespace TextBasedRPG
             //gets player input
             ConsoleKeyInfo input;
             input = Console.ReadKey(true);
-
-            map.DrawTile(x, y);
-            if ((input.KeyChar == 'w' || input.Key == ConsoleKey.UpArrow) && map.CheckWall(x, y - 1) == false)
+            if (alive)
             {
-                y--;
-            }
-            if ((input.KeyChar == 's' || input.Key == ConsoleKey.DownArrow) && map.CheckWall(x, y + 1) == false)
-            {
-                y++;
-            }
-            if ((input.KeyChar == 'a' || input.Key == ConsoleKey.LeftArrow) && map.CheckWall(x - 1, y) == false)
-            {
-                x--;
-            }
-            if ((input.KeyChar == 'd' || input.Key == ConsoleKey.RightArrow) && map.CheckWall(x + 1, y) == false)
-            {
-                x++;
+                map.DrawTile(x, y);
+                if ((input.KeyChar == 'w' || input.Key == ConsoleKey.UpArrow) && map.CheckWall(x, y - 1) == false && eManager.CheckPosition(x, y - 1) == null)
+                {
+                    y--;
+                }
+                else if (eManager.CheckPosition(x, y - 1) != null)
+                {
+                    eManager.CheckPosition(x, y - 1).ApplyDamage();
+                }
+                if ((input.KeyChar == 's' || input.Key == ConsoleKey.DownArrow) && map.CheckWall(x, y + 1) == false && eManager.CheckPosition(x, y + 1) == null)
+                {
+                    y++;
+                }
+                else if (eManager.CheckPosition(x, y + 1) != null)
+                {
+                    eManager.CheckPosition(x, y + 1).ApplyDamage();
+                }
+                if ((input.KeyChar == 'a' || input.Key == ConsoleKey.LeftArrow) && map.CheckWall(x - 1, y) == false && eManager.CheckPosition(x - 1, y) == null)
+                {
+                    x--;
+                }
+                else if (eManager.CheckPosition(x - 1, y) != null)
+                {
+                    eManager.CheckPosition(x - 1, y).ApplyDamage();
+                }
+                if ((input.KeyChar == 'd' || input.Key == ConsoleKey.RightArrow) && map.CheckWall(x + 1, y) == false && eManager.CheckPosition(x + 1, y) == null)
+                {
+                    x++;
+                }
+                else if (eManager.CheckPosition(x + 1, y) != null)
+                {
+                    eManager.CheckPosition(x + 1, y).ApplyDamage();
+                }
             }
         }
     }

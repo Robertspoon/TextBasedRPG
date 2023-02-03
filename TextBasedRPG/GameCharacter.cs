@@ -13,6 +13,7 @@ namespace TextBasedRPG
         public string name;
         public Map map;
         public char avatar;
+        public bool alive;
 
         //Methods
         public GameCharacter(int health, string name, Map map, char avatar)
@@ -21,20 +22,31 @@ namespace TextBasedRPG
             this.name = name;
             this.map = map;
             this.avatar = avatar;
+            alive = true;
         }
         public void TakeDamage(int hp)
         {
             //applies damage to player/enemies
             health -= hp;
-            if (health < 0) health = 0;
+            if (health < 0)
+            {
+                health = 0;
+            }
         }
-        /*public bool CheckIfDead()
+        public void ApplyDamage()
         {
-            if (health == 0) return false;
-        }*/
-       public void CheckForTarget(int x, int y)
-       {
-           
-       }
+            //Calculates damage done to enemy/player
+            Random damage = new Random();
+            int dmgRandom = damage.Next(1, 4);
+
+            TakeDamage(dmgRandom);
+        }
+        public void OnDeath()
+        {
+            if (health == 0)
+            {
+                alive = false;
+            }
+        }
     }
 }

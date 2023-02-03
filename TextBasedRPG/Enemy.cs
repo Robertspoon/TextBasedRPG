@@ -9,13 +9,14 @@ namespace TextBasedRPG
     internal class Enemy : GameCharacter
     {
         //fields
-        private int x = 40;
-        private int y = 11;
+        public int x = 40;
+        public int y = 11;
+        public Player player;
        
         //methods
-        public Enemy(string name, int health, Map map, char avatar) : base(health, name, map, avatar)
+        public Enemy(string name, int health, Map map, char avatar, Player player) : base(health, name, map, avatar)
         {
-            
+            this.player = player;
         }
 
         public void Draw()
@@ -30,32 +31,51 @@ namespace TextBasedRPG
         public void Update()
         {
             //updates enemy on map
+            OnDeath();
             map.DrawTile(x, y);
             RandomMovement();
         }
 
         public void RandomMovement()
         {
-            //generates random number between 0-3 and moves enemy accordingly
+            //generates random number between 0-3, moves enemy accordingly, and checks for collision
             Random randMove = new Random();
 
-            int irandom = randMove.Next(0, 3);
-
-            if (irandom == 0 && map.CheckWall(x, y - 1) == false)
+            int irandom = randMove.Next(0, 4);
+            if (alive)
             {
-                y--;
-            }
-            if (irandom ==1 && map.CheckWall(x, y+1) == false)
-            {
-                y++;
-            }
-            if (irandom ==2 && map.CheckWall(x-1, y) == false)
-            {
-                x--;
-            }
-            if (irandom ==3 && map.CheckWall(x+1, y) == false)
-            {
-                x++;
+                if (irandom == 0 && map.CheckWall(x, y - 1) == false && player.x != x && player.y != y - 1)
+                {
+                    y--;
+                }
+                else if (irandom == 0 && player.x == x && player.y == y - 1)
+                {
+                    player.ApplyDamage();
+                }
+                if (irandom == 1 && map.CheckWall(x, y + 1) == false && player.x != x && player.y != y + 1)
+                {
+                    y++;
+                }
+                else if (irandom == 1 && player.x == x && player.y == y + 1)
+                {
+                    player.ApplyDamage();
+                }
+                if (irandom == 2 && map.CheckWall(x - 1, y) == false && player.x != x - 1 && player.y != y)
+                {
+                    x--;
+                }
+                else if (irandom == 2 && player.x == x - 1 && player.y == y)
+                {
+                    player.ApplyDamage();                  
+                }
+                if (irandom == 3 && map.CheckWall(x + 1, y) == false && player.x != x + 1 && player.y != y)
+                {
+                    x++;
+                }
+                else if (irandom == 3 && player.x == x + 1 && player.y == y)
+                {
+                    player.ApplyDamage();
+                }
             }
         }
     }
