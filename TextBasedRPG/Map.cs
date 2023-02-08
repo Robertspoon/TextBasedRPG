@@ -68,6 +68,10 @@ namespace TextBasedRPG
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.Write(map[y, x]);
         }
+        public void Update()
+        {
+
+        }
 
         public void DrawMap()
         {
