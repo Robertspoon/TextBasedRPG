@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace TextBasedRPG
 {
-    internal class GameManager
+    internal class Items
     {
-        public GameManager()
+
+        public Items()
         {
 
         }

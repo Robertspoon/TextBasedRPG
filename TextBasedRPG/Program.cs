@@ -24,10 +24,15 @@ namespace TextBasedRPG
 
             Console.CursorVisible = false;
 
+            GameManager gameManager = new GameManager();
+
+            
+
             Map map = new Map();
             EnemyManager enemyManager = new EnemyManager();
             Player player = new Player("Jeremy", 5, map, 'P', enemyManager);
             Enemy enemy = new Enemy("Rat",5,map,'R', player);
+            MediumEnemy mediumEnemy = new MediumEnemy("Regular sized rat", 10, map, '@',player);
             enemyManager.AddEnemy(enemy);
 
             map.DrawMap();
@@ -35,7 +40,8 @@ namespace TextBasedRPG
             while(true)
             {
                player.Draw();
-               enemy.Draw();    
+               enemy.Draw();
+               mediumEnemy.Draw();
                player.Update();
                enemy.Update();
             }

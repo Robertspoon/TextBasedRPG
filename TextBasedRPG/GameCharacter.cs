@@ -37,7 +37,7 @@ namespace TextBasedRPG
         {
             //Calculates damage done to enemy/player
             Random damage = new Random();
-            int dmgRandom = damage.Next(1, 4);
+            int dmgRandom = damage.Next(1, 2);
 
             TakeDamage(dmgRandom);
         }

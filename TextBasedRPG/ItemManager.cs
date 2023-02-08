@@ -8,5 +8,9 @@ namespace TextBasedRPG
 {
     internal class ItemManager
     {
+        public ItemManager()
+        {
+
+        }
     }
 }

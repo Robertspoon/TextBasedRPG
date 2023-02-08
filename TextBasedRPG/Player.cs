@@ -75,5 +75,10 @@ namespace TextBasedRPG
                 }
             }
         }
+        public void ShowHUD()
+        {
+            Console.WriteLine("Name: " + name);
+            Console.WriteLine("Health: " + health);
+        }
     }
 }

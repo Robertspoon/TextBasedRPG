@@ -48,7 +48,9 @@
     <Compile Include="GameCharacter.cs" />
     <Compile Include="GameManager.cs" />
     <Compile Include="ItemManager.cs" />
+    <Compile Include="Items.cs" />
     <Compile Include="Map.cs" />
+    <Compile Include="MediumEnemy.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
