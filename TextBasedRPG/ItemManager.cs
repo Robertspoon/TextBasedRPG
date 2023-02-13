@@ -8,6 +8,9 @@ namespace TextBasedRPG
 {
     internal class ItemManager
     {
+        public List<Items> Items = new List<Items>();
+
+
         public ItemManager()
         {
 

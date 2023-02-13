@@ -30,9 +30,9 @@ namespace TextBasedRPG
 
             Map map = new Map();
             EnemyManager enemyManager = new EnemyManager();
-            Player player = new Player("Jeremy", 5, map, 'P', enemyManager);
+            Player player = new Player("Jeremy", 7, map, 'P', enemyManager);
             Enemy enemy = new Enemy("Rat",5,map,'R', player);
-            MediumEnemy mediumEnemy = new MediumEnemy("Regular sized rat", 10, map, '@',player);
+            MediumEnemy mediumEnemy = new MediumEnemy("Skeleton", 10, map, '@',player);
             enemyManager.AddEnemy(enemy);
 
             map.DrawMap();

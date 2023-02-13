@@ -12,5 +12,10 @@ namespace TextBasedRPG
         {
 
         }
+
+        public void RunGame()
+        {
+
+        }
     }
 }
