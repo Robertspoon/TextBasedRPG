@@ -15,5 +15,12 @@ namespace TextBasedRPG
         {
 
         }
+
+        public void AddItems(Items healthPotion,Items strengthPotion)
+        {
+            Items.Add(healthPotion);
+            Items.Add(strengthPotion);
+        }
+
     }
 }
