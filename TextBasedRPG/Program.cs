@@ -24,8 +24,12 @@ namespace TextBasedRPG
 
             Console.CursorVisible = false;
 
-            GameManager gameManager = new GameManager(map, player, enemy, eManager);
+            GameManager gameManager = new GameManager();
 
+
+            gameManager.RunGame();
+
+          
             
 
             /*Map map = new Map();

@@ -12,16 +12,16 @@ namespace TextBasedRPG
         public Player player;
         public Enemy enemy;
         public EnemyManager eManager;
-        public MediumEnemy mediumEnemy;
+        public MediumEnemy medEnemy;
 
-        public GameManager(Map map, Player player, Enemy enemy, MediumEnemy mediumEnemy,EnemyManager eManager)
+        public GameManager()
         {
-            Map map = new Map();
-            EnemyManager enemyManager = new EnemyManager();
-            Player player = new Player("Jeremy", 5, 5, map, 'P', enemyManager);
-            Enemy enemy = new Enemy("Rat", 5, map, 'R', player);
-            MediumEnemy mediumEnemy = new MediumEnemy("Skeleton", 10, map, '@', player);
-            enemyManager.AddEnemy(enemy);
+            map = new Map();
+            eManager = new EnemyManager();
+            player = new Player("Jeremy", 5, 5, map, 'P', eManager);
+            enemy = new Enemy("Rat", 5, map, 'R', player);
+            medEnemy = new MediumEnemy("Skeleton", 7, map, '@', player);
+            eManager.AddEnemy(enemy);
         }
 
         public void RunGame()
@@ -32,7 +32,7 @@ namespace TextBasedRPG
             {
                 player.Draw();
                 enemy.Draw();
-                mediumEnemy.Draw();
+                medEnemy.Draw();
                 player.Update();
                 enemy.Update();
             }
