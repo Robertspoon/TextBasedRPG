@@ -8,5 +8,6 @@ namespace TextBasedRPG
 {
     internal class HUD
     {
+
     }
 }
