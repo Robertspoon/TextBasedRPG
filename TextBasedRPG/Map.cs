@@ -78,6 +78,10 @@ namespace TextBasedRPG
                 case '*':
                     Console.BackgroundColor = ConsoleColor.DarkGreen;
                     break;
+
+                case '"':
+                    Console.BackgroundColor = ConsoleColor.Gray;
+                    break;
             }
         }
         public bool CheckWall(int x, int y)

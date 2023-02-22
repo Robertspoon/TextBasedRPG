@@ -24,18 +24,18 @@ namespace TextBasedRPG
 
             Console.CursorVisible = false;
 
-            GameManager gameManager = new GameManager();
+            GameManager gameManager = new GameManager(map, player, enemy, eManager);
 
             
 
-            Map map = new Map();
+            /*Map map = new Map();
             EnemyManager enemyManager = new EnemyManager();
             Player player = new Player("Jeremy", 5,5, map, 'P', enemyManager);
             Enemy enemy = new Enemy("Rat",5,map,'R', player);
             MediumEnemy mediumEnemy = new MediumEnemy("Skeleton", 10, map, '@',player);
-            enemyManager.AddEnemy(enemy);
+            enemyManager.AddEnemy(enemy);*/
 
-            map.DrawMap();
+            /*map.DrawMap();
             //Main Game Loop
             while(true)
             {
@@ -44,7 +44,7 @@ namespace TextBasedRPG
                mediumEnemy.Draw();
                player.Update();
                enemy.Update();
-            }
+            }*/
             Console.ReadKey(true);
         }
     }
