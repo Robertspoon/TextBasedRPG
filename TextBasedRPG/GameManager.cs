@@ -13,6 +13,7 @@ namespace TextBasedRPG
         public Enemy enemy;
         public EnemyManager eManager;
         public MediumEnemy medEnemy;
+        public Items items;
 
         public GameManager()
         {
@@ -21,6 +22,7 @@ namespace TextBasedRPG
             player = new Player("Jeremy", 5, map, 'P', eManager);
             enemy = new Enemy("Rat", 5, map, 'R', player);
             medEnemy = new MediumEnemy("Skeleton", 7, map, '@', player);
+            items = new Items(map, player, '†');
             eManager.AddEnemy(enemy);
         }
 
@@ -33,8 +35,10 @@ namespace TextBasedRPG
                 player.Draw();
                 enemy.Draw();
                 medEnemy.Draw();
+                items.Draw();
                 player.Update();
                 enemy.Update();
+                medEnemy.Update();
             }
         }
     }

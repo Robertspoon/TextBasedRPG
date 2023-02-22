@@ -42,7 +42,6 @@ namespace TextBasedRPG
         {
 
         }
-
         public void DrawMap()
         {
             //Draws the map
@@ -56,7 +55,6 @@ namespace TextBasedRPG
                 Console.WriteLine();
             }    
         }
-
         public void TileColour(int x, int y)
         {
             //checks each tile and assigns colour according to which tile it is

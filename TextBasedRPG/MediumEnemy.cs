@@ -15,7 +15,6 @@ namespace TextBasedRPG
         {
             this.player = player;
         }
-
         public void Draw()
         {
             map.TileColour(x, y);
@@ -23,11 +22,52 @@ namespace TextBasedRPG
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(avatar);
         }
-
         public void Update()
         {
             OnDeath();
             map.DrawTile(x, y);
+            Move();
+        }
+
+        public void Move()
+        {
+            Random randMove = new Random();
+            int irandom = randMove.Next(0, 4);
+            if (alive)
+            {
+                if (irandom == 0 && map.CheckWall(x, y - 1) == false && player.x != x && player.y != y - 1)
+                {
+                    y--;
+                }
+                else if (irandom == 0 && player.x == x && player.y == y - 1)
+                {
+                    player.ApplyDamage();
+                }
+                if (irandom == 1 && map.CheckWall(x, y + 1) == false && player.x != x && player.y != y + 1)
+                {
+                    y++;
+                }
+                else if (irandom == 1 && player.x == x && player.y == y + 1)
+                {
+                    player.ApplyDamage();
+                }
+                if (irandom == 2 && map.CheckWall(x - 1, y) == false && player.x != x - 1 && player.y != y)
+                {
+                    x--;
+                }
+                else if (irandom == 2 && player.x == x - 1 && player.y == y)
+                {
+                    player.ApplyDamage();
+                }
+                if (irandom == 3 && map.CheckWall(x + 1, y) == false && player.x != x + 1 && player.y != y)
+                {
+                    x++;
+                }
+                else if (irandom == 3 && player.x == x + 1 && player.y == y)
+                {
+                    player.ApplyDamage();
+                }
+            }
         }
     }
 }

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace TextBasedRPG
 {
-    internal class goblin
+    internal class goblin 
     {
+        
     }
 }

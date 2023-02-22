@@ -18,7 +18,6 @@ namespace TextBasedRPG
         {
             this.player = player;
         }
-
         public void Draw()
         {
             //draws enemy to map
@@ -27,16 +26,14 @@ namespace TextBasedRPG
             Console.ForegroundColor = ConsoleColor.DarkRed;
             Console.WriteLine(avatar);
         }
-
         public void Update()
         {
             //updates enemy on map
             OnDeath();
             map.DrawTile(x, y);
-            RandomMovement();
+            Move();
         }
-
-        public void RandomMovement()
+        public void Move()
         {
             //generates random number between 0-3, moves enemy accordingly, and checks for collision
             Random randMove = new Random();
