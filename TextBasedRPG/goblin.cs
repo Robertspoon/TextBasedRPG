@@ -6,13 +6,7 @@ using System.Threading.Tasks;
 
 namespace TextBasedRPG
 {
-    internal class Items
+    internal class goblin
     {
-        public ItemManager iManager;
-
-        public Items()
-        {
-
-        }
     }
 }

@@ -47,6 +47,7 @@
     <Compile Include="EnemyManager.cs" />
     <Compile Include="GameCharacter.cs" />
     <Compile Include="GameManager.cs" />
+    <Compile Include="goblin.cs" />
     <Compile Include="HUD.cs" />
     <Compile Include="ItemManager.cs" />
     <Compile Include="Items.cs" />
