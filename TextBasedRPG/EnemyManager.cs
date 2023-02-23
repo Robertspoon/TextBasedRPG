@@ -16,7 +16,7 @@ namespace TextBasedRPG
             Enemies.Add(badguy);
         }
 
-        public Enemy CheckPosition(int x, int y)
+        public Enemy GetEnemyAt(int x, int y)
         {
             //checks the position of enemies in list
             Enemy badguy = null;

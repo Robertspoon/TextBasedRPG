@@ -8,8 +8,7 @@ namespace TextBasedRPG
 {
     internal class Items
     {
-        public ItemManager iManager;
-
+      
         public int x = 7;
         public int y = 15;
         public Player player;

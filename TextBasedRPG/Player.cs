@@ -11,13 +11,13 @@ namespace TextBasedRPG
         //fields
         public int x = 25;
         public int y = 10;
-        public EnemyManager eManager;
+        public EnemyManager enemyManager;
   
         //methods
 
-        public Player(string name, int health, Map map, char avatar,EnemyManager eManager) : base(health, name, map, avatar)
+        public Player(string name, int health, Map map, char avatar,EnemyManager enemyManager) : base(health, name, map, avatar)
         {
-            this.eManager = eManager;
+            this.enemyManager = enemyManager;
         }
        public void Update()
        {
@@ -41,37 +41,37 @@ namespace TextBasedRPG
             if (alive)
             {
                 map.DrawTile(x, y);
-                if ((input.KeyChar == 'w' || input.Key == ConsoleKey.UpArrow) && map.CheckWall(x, y - 1) == false && eManager.CheckPosition(x, y - 1) == null)
+                if ((input.KeyChar == 'w' || input.Key == ConsoleKey.UpArrow) && map.CheckWall(x, y - 1) == false && enemyManager.GetEnemyAt(x, y - 1) == null)
                 {
                     y--;
                 }
-                else if (eManager.CheckPosition(x, y - 1) != null)
+                else if (enemyManager.GetEnemyAt(x, y - 1) != null)
                 {
-                    eManager.CheckPosition(x, y - 1).ApplyDamage();
+                    enemyManager.GetEnemyAt(x, y - 1).ApplyDamage();
                 }
-                if ((input.KeyChar == 's' || input.Key == ConsoleKey.DownArrow) && map.CheckWall(x, y + 1) == false && eManager.CheckPosition(x, y + 1) == null)
+                if ((input.KeyChar == 's' || input.Key == ConsoleKey.DownArrow) && map.CheckWall(x, y + 1) == false && enemyManager.GetEnemyAt(x, y + 1) == null)
                 {
                     y++;
                 }
-                else if (eManager.CheckPosition(x, y + 1) != null)
+                else if (enemyManager.GetEnemyAt(x, y + 1) != null)
                 {
-                    eManager.CheckPosition(x, y + 1).ApplyDamage();
+                    enemyManager.GetEnemyAt(x, y + 1).ApplyDamage();
                 }
-                if ((input.KeyChar == 'a' || input.Key == ConsoleKey.LeftArrow) && map.CheckWall(x - 1, y) == false && eManager.CheckPosition(x - 1, y) == null)
+                if ((input.KeyChar == 'a' || input.Key == ConsoleKey.LeftArrow) && map.CheckWall(x - 1, y) == false && enemyManager.GetEnemyAt(x - 1, y) == null)
                 {
                     x--;
                 }
-                else if (eManager.CheckPosition(x - 1, y) != null)
+                else if (enemyManager.GetEnemyAt(x - 1, y) != null)
                 {
-                    eManager.CheckPosition(x - 1, y).ApplyDamage();
+                    enemyManager.GetEnemyAt(x - 1, y).ApplyDamage();
                 }
-                if ((input.KeyChar == 'd' || input.Key == ConsoleKey.RightArrow) && map.CheckWall(x + 1, y) == false && eManager.CheckPosition(x + 1, y) == null)
+                if ((input.KeyChar == 'd' || input.Key == ConsoleKey.RightArrow) && map.CheckWall(x + 1, y) == false && enemyManager.GetEnemyAt(x + 1, y) == null)
                 {
                     x++;
                 }
-                else if (eManager.CheckPosition(x + 1, y) != null)
+                else if (enemyManager.GetEnemyAt(x + 1, y) != null)
                 {
-                    eManager.CheckPosition(x + 1, y).ApplyDamage();
+                    enemyManager.GetEnemyAt(x + 1, y).ApplyDamage();
                 }
             }
         }

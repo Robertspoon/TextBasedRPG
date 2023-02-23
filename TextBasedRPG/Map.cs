@@ -11,6 +11,7 @@ namespace TextBasedRPG
     {
         //fields
         private string[] map = System.IO.File.ReadAllLines("map.txt");
+        public HUD display;
 
         private char[] borderSides = new char[] { '║', '═' };
         private char[] borderEdges = new char[] { '╔', '╗', '╚', '╝' };
@@ -38,10 +39,7 @@ namespace TextBasedRPG
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.Write(map[y][x]);
         }
-        public void Update()
-        {
-
-        }
+        
         public void DrawMap()
         {
             //Draws the map

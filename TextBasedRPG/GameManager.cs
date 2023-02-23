@@ -15,6 +15,7 @@ namespace TextBasedRPG
         public MediumEnemy medEnemy;
         public Goblin goblin;
         public Items items;
+        public HUD display;
 
         public GameManager()
         {
@@ -25,6 +26,7 @@ namespace TextBasedRPG
             medEnemy = new MediumEnemy("Skeleton", 7, map, '@', player);
             goblin = new Goblin("Goblin", 5, map, '#', player);
             items = new Items(map, player, '†');
+            display = new HUD();
             eManager.AddEnemy(enemy);
         }
 

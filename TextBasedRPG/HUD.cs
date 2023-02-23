@@ -8,6 +8,17 @@ namespace TextBasedRPG
 {
     internal class HUD
     {
+        public Player player;
 
+        public HUD()
+        {
+
+        }
+
+        public void DisplayHUD()
+        {
+            Console.WriteLine(player.name);
+            Console.WriteLine(player.health);
+        }
     }
 }
