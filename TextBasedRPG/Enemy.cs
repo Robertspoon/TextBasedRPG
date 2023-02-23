@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TextBasedRPG
 {
-    internal class Enemy : GameCharacter
+    internal class Rat : GameCharacter
     {
         //fields
         public int x = 40;
@@ -14,7 +14,7 @@ namespace TextBasedRPG
         public Player player;
        
         //methods
-        public Enemy(string name, int health, Map map, char avatar, Player player) : base(health, name, map, avatar)
+        public Rat(string name, int health, Map map, char avatar, Player player) : base(health, name, map, avatar)
         {
             this.player = player;
         }

@@ -8,18 +8,18 @@ namespace TextBasedRPG
 {
     internal class EnemyManager
     {
-        public List<Enemy> Enemies = new List<Enemy>();
+        public List<Rat> Enemies = new List<Rat>();
 
 
-        public void AddEnemy(Enemy badguy)
+        public void AddEnemy(Rat badguy)
         {
             Enemies.Add(badguy);
         }
 
-        public Enemy GetEnemyAt(int x, int y)
+        public Rat GetEnemyAt(int x, int y)
         {
             //checks the position of enemies in list
-            Enemy badguy = null;
+            Rat badguy = null;
             for(int i = 0; i< Enemies.Count; i++)
             {
                 if (Enemies[i].x == x && Enemies[i].y == y)

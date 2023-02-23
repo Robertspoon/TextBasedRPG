@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace TextBasedRPG
 {
-    internal class MediumEnemy : GameCharacter
+    internal class Skeleton : GameCharacter
     {
        public int x = 20;
        public int y = 5;
        public Player player;
-        public MediumEnemy(string name, int health, Map map, char avatar,Player player) : base(health, name, map, avatar)
+        public Skeleton(string name, int health, Map map, char avatar,Player player) : base(health, name, map, avatar)
         {
             this.player = player;
         }
