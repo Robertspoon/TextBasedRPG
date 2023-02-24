@@ -45,6 +45,7 @@ namespace TextBasedRPG
                 player.Update();
                 rat.Update();
                 skeleton.Update();
+                goblin.Update();
             }
         }
     }

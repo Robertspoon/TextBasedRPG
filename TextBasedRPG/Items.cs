@@ -24,9 +24,7 @@ namespace TextBasedRPG
             this.avatar1 = avatar1;
             this.avatar2 = avatar2;
             this.avatar3 = avatar3;
-            avatars[0] = avatar1;
-            avatars[1] = avatar2;
-            avatars[2] = avatar3;
+           
         }
 
         public void DrawHealthPot()

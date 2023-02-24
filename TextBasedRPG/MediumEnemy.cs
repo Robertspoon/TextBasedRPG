@@ -51,22 +51,6 @@ namespace TextBasedRPG
                 {
                     player.TakeDamage();
                 }
-                if (irandom == 2 && map.CheckWall(x - 1, y) == false && player.x != x - 1 && player.y != y)
-                {
-                    x--;
-                }
-                else if (irandom == 2 && player.x == x - 1 && player.y == y)
-                {
-                    player.TakeDamage();
-                }
-                if (irandom == 3 && map.CheckWall(x + 1, y) == false && player.x != x + 1 && player.y != y)
-                {
-                    x++;
-                }
-                else if (irandom == 3 && player.x == x + 1 && player.y == y)
-                {
-                    player.TakeDamage();
-                }
             }
         }
     }

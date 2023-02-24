@@ -24,5 +24,37 @@ namespace TextBasedRPG
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine(avatar);
         }
+
+        public void Update()
+        {
+            OnDeath();
+            map.DrawTile(x, y);
+            Move();
+        }
+        public void Move()
+        {
+            Random randMove = new Random();
+            int irandom = randMove.Next(0, 4);
+            if (alive)
+            {
+                
+                if (irandom == 2 && map.CheckWall(x - 1, y) == false && player.x != x - 1 && player.y != y)
+                {
+                    x--;
+                }
+                else if (irandom == 2 && player.x == x - 1 && player.y == y)
+                {
+                    player.TakeDamage();
+                }
+                if (irandom == 3 && map.CheckWall(x + 1, y) == false && player.x != x + 1 && player.y != y)
+                {
+                    x++;
+                }
+                else if (irandom == 3 && player.x == x + 1 && player.y == y)
+                {
+                    player.TakeDamage();
+                }
+            }
+        }
     }
 }
