@@ -41,7 +41,7 @@ namespace TextBasedRPG
                 }
                 else if (irandom == 0 && player.x == x && player.y == y - 1)
                 {
-                    player.ApplyDamage();
+                    player.TakeDamage();
                 }
                 if (irandom == 1 && map.CheckWall(x, y + 1) == false && player.x != x && player.y != y + 1)
                 {
@@ -49,7 +49,7 @@ namespace TextBasedRPG
                 }
                 else if (irandom == 1 && player.x == x && player.y == y + 1)
                 {
-                    player.ApplyDamage();
+                    player.TakeDamage();
                 }
                 if (irandom == 2 && map.CheckWall(x - 1, y) == false && player.x != x - 1 && player.y != y)
                 {
@@ -57,7 +57,7 @@ namespace TextBasedRPG
                 }
                 else if (irandom == 2 && player.x == x - 1 && player.y == y)
                 {
-                    player.ApplyDamage();
+                    player.TakeDamage();
                 }
                 if (irandom == 3 && map.CheckWall(x + 1, y) == false && player.x != x + 1 && player.y != y)
                 {
@@ -65,7 +65,7 @@ namespace TextBasedRPG
                 }
                 else if (irandom == 3 && player.x == x + 1 && player.y == y)
                 {
-                    player.ApplyDamage();
+                    player.TakeDamage();
                 }
             }
         }

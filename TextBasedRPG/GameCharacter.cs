@@ -33,7 +33,7 @@ namespace TextBasedRPG
                 health = 0;
             }
         }
-        public void ApplyDamage()
+        public void TakeDamage()
         {
             //Calculates damage done to enemy/player
             Random damage = new Random();

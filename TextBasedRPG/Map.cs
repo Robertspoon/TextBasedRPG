@@ -11,7 +11,7 @@ namespace TextBasedRPG
     {
         //fields
         private string[] map = System.IO.File.ReadAllLines("map.txt");
-        public HUD display;
+        public HUD hud;
 
         private char[] borderSides = new char[] { '║', '═' };
         private char[] borderEdges = new char[] { '╔', '╗', '╚', '╝' };

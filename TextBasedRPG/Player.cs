@@ -50,7 +50,7 @@ namespace TextBasedRPG
                 }
                 else if (enemyManager.GetEnemyAt(x, y - 1) != null)
                 {
-                    enemyManager.GetEnemyAt(x, y - 1).ApplyDamage();
+                    enemyManager.GetEnemyAt(x, y - 1).TakeDamage();
                 }
                 if ((input.KeyChar == 's' || input.Key == ConsoleKey.DownArrow) && map.CheckWall(x, y + 1) == false && enemyManager.GetEnemyAt(x, y + 1) == null)
                 {
@@ -58,7 +58,7 @@ namespace TextBasedRPG
                 }
                 else if (enemyManager.GetEnemyAt(x, y + 1) != null)
                 {
-                    enemyManager.GetEnemyAt(x, y + 1).ApplyDamage();
+                    enemyManager.GetEnemyAt(x, y + 1).TakeDamage();
                 }
                 if ((input.KeyChar == 'a' || input.Key == ConsoleKey.LeftArrow) && map.CheckWall(x - 1, y) == false && enemyManager.GetEnemyAt(x - 1, y) == null)
                 {
@@ -66,7 +66,7 @@ namespace TextBasedRPG
                 }
                 else if (enemyManager.GetEnemyAt(x - 1, y) != null)
                 {
-                    enemyManager.GetEnemyAt(x - 1, y).ApplyDamage();
+                    enemyManager.GetEnemyAt(x - 1, y).TakeDamage();
                 }
                 if ((input.KeyChar == 'd' || input.Key == ConsoleKey.RightArrow) && map.CheckWall(x + 1, y) == false && enemyManager.GetEnemyAt(x + 1, y) == null)
                 {
@@ -74,7 +74,7 @@ namespace TextBasedRPG
                 }
                 else if (enemyManager.GetEnemyAt(x + 1, y) != null)
                 {
-                    enemyManager.GetEnemyAt(x + 1, y).ApplyDamage();
+                    enemyManager.GetEnemyAt(x + 1, y).TakeDamage();
                 }
             }
         }

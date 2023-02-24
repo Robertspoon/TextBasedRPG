@@ -25,7 +25,7 @@ namespace TextBasedRPG
             rat = new Rat("Rat", 3, map, 'R', player);
             skeleton = new Skeleton("Skeleton", 7, map, '@', player);
             goblin = new Goblin("Goblin", 5, map, '#', player);
-            items = new Items(map, player, '†');
+            items = new Items(map, player, '†','0','+');
             display = new HUD();
             eManager.AddEnemy(rat);
           
@@ -41,7 +41,7 @@ namespace TextBasedRPG
                 rat.Draw();
                 skeleton.Draw();
                 goblin.Draw();
-                items.Draw();
+                items.DrawHealthPot();
                 player.Update();
                 rat.Update();
                 skeleton.Update();
