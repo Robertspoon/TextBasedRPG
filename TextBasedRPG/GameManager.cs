@@ -21,13 +21,14 @@ namespace TextBasedRPG
         {
             map = new Map();
             eManager = new EnemyManager();
-            player = new Player("Jeremy", 5, map, 'P', eManager);
+            player = new Player("Jeremy", 5, map, 'P', eManager,rat);
             rat = new Rat("Rat", 3, map, 'R', player);
             skeleton = new Skeleton("Skeleton", 7, map, '@', player);
             goblin = new Goblin("Goblin", 5, map, '#', player);
             items = new Items(map, player, '†');
             display = new HUD();
             eManager.AddEnemy(rat);
+          
         }
 
         public void RunGame()

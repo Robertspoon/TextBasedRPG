@@ -12,12 +12,15 @@ namespace TextBasedRPG
         public int x = 25;
         public int y = 10;
         public EnemyManager enemyManager;
+        public Rat rat;
+       
   
         //methods
 
-        public Player(string name, int health, Map map, char avatar,EnemyManager enemyManager) : base(health, name, map, avatar)
+        public Player(string name, int health, Map map, char avatar,EnemyManager enemyManager,Rat rat) : base(health, name, map, avatar)
         {
             this.enemyManager = enemyManager;
+            this.rat = rat;
         }
        public void Update()
        {
