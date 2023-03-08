@@ -14,7 +14,7 @@ namespace TextBasedRPG
             //Pseudo starting screen
             Console.WriteLine("Robert Atkinson's Text Based RPG");
             Console.WriteLine();
-            Console.WriteLine("First Playable");
+            Console.WriteLine("Beta");
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine();
