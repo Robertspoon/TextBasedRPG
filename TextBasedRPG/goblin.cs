@@ -38,17 +38,17 @@ namespace TextBasedRPG
             if (alive)
             {
                 
-                if (irandom == 2 && map.CheckWall(x - 1, y) == false && player.x != x - 1 && player.y != y)
+                if (irandom == 2 && map.CheckifWall(x - 1, y) == false && player.x != x - 1 && player.y != y)
                 {
-                    x--;
+                    x -= 2;
                 }
                 else if (irandom == 2 && player.x == x - 1 && player.y == y)
                 {
                     player.TakeDamage();
                 }
-                if (irandom == 3 && map.CheckWall(x + 1, y) == false && player.x != x + 1 && player.y != y)
+                if (irandom == 3 && map.CheckifWall(x + 1, y) == false && player.x != x + 1 && player.y != y)
                 {
-                    x++;
+                    x += 2;
                 }
                 else if (irandom == 3 && player.x == x + 1 && player.y == y)
                 {

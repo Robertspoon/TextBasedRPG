@@ -35,7 +35,7 @@ namespace TextBasedRPG
             int irandom = randMove.Next(0, 4);
             if (alive)
             {
-                if (irandom == 0 && map.CheckWall(x, y - 1) == false && player.x != x && player.y != y - 1)
+                if (irandom == 0 && map.CheckifWall(x, y - 1) == false && player.x != x && player.y != y - 1)
                 {
                     y--;
                 }
@@ -43,7 +43,7 @@ namespace TextBasedRPG
                 {
                     player.TakeDamage();
                 }
-                if (irandom == 1 && map.CheckWall(x, y + 1) == false && player.x != x && player.y != y + 1)
+                if (irandom == 1 && map.CheckifWall(x, y + 1) == false && player.x != x && player.y != y + 1)
                 {
                     y++;
                 }

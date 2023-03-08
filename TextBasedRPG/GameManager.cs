@@ -15,7 +15,7 @@ namespace TextBasedRPG
         public Skeleton skeleton;
         public Goblin goblin;
         public Items items;
-        public HUD display;
+        public HUD hud;
 
         public GameManager()
         {
@@ -25,8 +25,8 @@ namespace TextBasedRPG
             rat = new Rat("Rat", 3, map, 'R', player);
             skeleton = new Skeleton("Skeleton", 7, map, '@', player);
             goblin = new Goblin("Goblin", 5, map, '#', player);
-            items = new Items(map, player, '†','0','+');
-            display = new HUD();
+            items = new Items(map, player, '†');
+            hud = new HUD();
             eManager.AddEnemy(rat);
           
         }
@@ -37,11 +37,11 @@ namespace TextBasedRPG
             //Main Game Loop
             while (true)
             {
-                player.Draw();
                 rat.Draw();
                 skeleton.Draw();
                 goblin.Draw();
                 items.DrawHealthPot();
+                player.Draw();
                 player.Update();
                 rat.Update();
                 skeleton.Update();

@@ -14,16 +14,12 @@ namespace TextBasedRPG
         public int y = 15;
         public Player player;
         public Map map;
-        public char avatar1;
-        public char avatar2;
-        public char avatar3;
-        public char[] avatars;
+        public char avatar;
         
-        public Items(Map map, Player player, char avatar1, char avatar2, char avatar3)
+        
+        public Items(Map map, Player player, char avatar)
         {
-            this.avatar1 = avatar1;
-            this.avatar2 = avatar2;
-            this.avatar3 = avatar3;
+            
            
         }
 
@@ -31,7 +27,7 @@ namespace TextBasedRPG
         {
             Console.SetCursorPosition(x, y);
             Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine(avatar1);
+            Console.WriteLine(avatar);
         }
 
 

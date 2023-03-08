@@ -44,7 +44,7 @@ namespace TextBasedRPG
             if (alive)
             {
                 map.DrawTile(x, y);
-                if ((input.KeyChar == 'w' || input.Key == ConsoleKey.UpArrow) && map.CheckWall(x, y - 1) == false && enemyManager.GetEnemyAt(x, y - 1) == null)
+                if ((input.KeyChar == 'w' || input.Key == ConsoleKey.UpArrow) && map.CheckifWall(x, y - 1) == false && enemyManager.GetEnemyAt(x, y - 1) == null)
                 {
                     y--;
                 }
@@ -52,7 +52,7 @@ namespace TextBasedRPG
                 {
                     enemyManager.GetEnemyAt(x, y - 1).TakeDamage();
                 }
-                if ((input.KeyChar == 's' || input.Key == ConsoleKey.DownArrow) && map.CheckWall(x, y + 1) == false && enemyManager.GetEnemyAt(x, y + 1) == null)
+                if ((input.KeyChar == 's' || input.Key == ConsoleKey.DownArrow) && map.CheckifWall(x, y + 1) == false && enemyManager.GetEnemyAt(x, y + 1) == null)
                 {
                     y++;
                 }
@@ -60,7 +60,7 @@ namespace TextBasedRPG
                 {
                     enemyManager.GetEnemyAt(x, y + 1).TakeDamage();
                 }
-                if ((input.KeyChar == 'a' || input.Key == ConsoleKey.LeftArrow) && map.CheckWall(x - 1, y) == false && enemyManager.GetEnemyAt(x - 1, y) == null)
+                if ((input.KeyChar == 'a' || input.Key == ConsoleKey.LeftArrow) && map.CheckifWall(x - 1, y) == false && enemyManager.GetEnemyAt(x - 1, y) == null)
                 {
                     x--;
                 }
@@ -68,7 +68,7 @@ namespace TextBasedRPG
                 {
                     enemyManager.GetEnemyAt(x - 1, y).TakeDamage();
                 }
-                if ((input.KeyChar == 'd' || input.Key == ConsoleKey.RightArrow) && map.CheckWall(x + 1, y) == false && enemyManager.GetEnemyAt(x + 1, y) == null)
+                if ((input.KeyChar == 'd' || input.Key == ConsoleKey.RightArrow) && map.CheckifWall(x + 1, y) == false && enemyManager.GetEnemyAt(x + 1, y) == null)
                 {
                     x++;
                 }

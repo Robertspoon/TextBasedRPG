@@ -13,9 +13,6 @@ namespace TextBasedRPG
         private string[] map = System.IO.File.ReadAllLines("map.txt");
         public HUD hud;
 
-        private char[] borderSides = new char[] { '║', '═' };
-        private char[] borderEdges = new char[] { '╔', '╗', '╚', '╝' };
-
         // map legend:
         // ^ = mountain
         // ` = grass
@@ -80,7 +77,7 @@ namespace TextBasedRPG
                     break;
             }
         }
-        public bool CheckWall(int x, int y)
+        public bool CheckifWall(int x, int y)
         {
             //will definetly change in later version once border is properly implemented
             try
